@@ -27,5 +27,7 @@ from Qbank import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url('about/', views.about, name='about')
+    url('about/', views.about, name='about'),
+    url('results/', views.results, name='results'),
+    url('alevelbio/', views.ABIO, name='ABIO'),
 ]
