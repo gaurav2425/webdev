@@ -1,46 +1,46 @@
-
-{% load static %}<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+{% extends "base.html" %}
+  {% block title %}
+    
     {% if Qbank %}
-        <title>Smart-Le - {{ Qbank.0.name }} </title>
+        <title>Homepage - Smart-Le  </title>
     {% else %}
         <title>Welcome to Smart-Le</title>
     {% endif %}
 
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-  </head>
-  <body>
+  {% endblock title %}
+
+
+
+
+
+  {% block table %}
     <div class="container">
-        <ol class="breadcrumb my-4">
-          <li class="breadcrumb-item active">Question Bank Homepage - Navigator</li>
-        </ol>
-        <table class="table">
-          <thead class="thead-inverse">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Question Bank Homepage - Navigator</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Question Bank</th>
+            <th>Question Decks</th>
+            <th>Questions</th>
+            <th>Last Post</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for qbank in Qbank %}
             <tr>
-              <th>Question Bank</th>
-              <th>Question Decks</th>
-              <th>Questions</th>
-              <th>Last Post</th>
+              <td>
+                {{ qbank.name }}
+                <small class="text-muted d-block">{{ qbank.description }}</small>
+              </td>
+              <td class="align-middle">0</td>
+              <td class="align-middle">0</td>
+              <td></td>
             </tr>
-          </thead>
-          <tbody>
-            {% for qbank in Qbank %}
-              <tr>
-                <td>
-                  {{ qbank.name }}
-                  <small class="text-muted d-block">{{ qbank.description }}</small>
-                </td>
-                <td class="align-middle">9</td>
-                <td class="align-middle">2</td>
-                <td></td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-  </body>
-</html>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  {% endblock table %}
