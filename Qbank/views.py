@@ -13,4 +13,13 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'about.html', {'title': 'Qbank'})
+    return render(request, 'about.html') ###{'title''Qbank'})
+
+
+def ABIO(request):
+    return render(request, 'ABIO.html')
+
+
+
+def results(request):
+    return render(request, 'results.html')
