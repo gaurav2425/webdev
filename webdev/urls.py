@@ -22,7 +22,7 @@ from django.urls import path
 
 
 from Qbank import views
-
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +30,6 @@ urlpatterns = [
     url('about/', views.about, name='about'),
     url('results/', views.results, name='results'),
     url('alevelbio/', views.ABIO, name='ABIO'),
+    url('register/', user_views.register, name='register'), 
+
 ]

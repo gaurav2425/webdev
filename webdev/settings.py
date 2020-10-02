@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Qbank',
+    'Qbank.apps.QbankConfig',
+    'users.apps.UsersConfig',
     
 ]
 
