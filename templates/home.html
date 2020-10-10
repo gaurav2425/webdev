@@ -10,66 +10,29 @@
 
 
 {% block table %}
-
-<div class="container">
-  <table class="table table-hover">
-    <thead>
-      
-      <tr>
-        
-        <th scope="col">Bank</th>
-        
-        <th scope="col">Topics</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for qbank in Qbank %}
-      <tr>
-       
-        <th scope="row">{{qbank.name}}</th>
-        <td>{{qbank.description}}</td>
-        
-      </tr>
-      {% endfor %}
-      
-      
-    </tbody>
-  </table>
-</div>
-{% endblock table %}
-
-  
     <div class="container">
-      <ol class="breadcrumb my-4">
-        <li class="breadcrumb-item active">Question Bank Homepage - Navigator</li>
-      </ol>
-      <table class="table">
-        <thead class="thead-inverse">
+      <table class="table table-hover">
+        <thead>
+          
           <tr>
-            <th>Question Bank</th>
-            <th>Question Decks</th>
-            <th>Questions</th>
-            <th>Last Post</th>
+            
+            <th scope="col">Bank</th>
+            
+            <th scope="col">Topics</th>
           </tr>
-        
         </thead>
-
-        <h1> Welcome, {{ user.username }}! </h1>
-
         <tbody>
           {% for qbank in Qbank %}
-            <tr>
-              <td>
-                {{ qbank.name }}
-                <small class="text-muted d-block">{{ qbank.description }}</small>
-              </td>
-              <td class="align-middle">0</td>
-              <td class="align-middle">0</td>
-              <td></td>
-            </tr>
+          <tr>
+          
+            <th scope="row">{{qbank.name}}</th>
+            <td>{{qbank.description}}</td>
+            
+          </tr>
           {% endfor %}
+          
+          
         </tbody>
       </table>
     </div>
-
-  
+{% endblock table %}
