@@ -1,56 +1,58 @@
-
 {% load static %}<!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
+
     {% block title %}{% endblock %}
 
-    
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   </head>
+
   <body>
 
-   
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand" href=" {% url 'home' %} ">Smart-Le</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'qbankview'%}" >Question Bank</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'results'%}">My Results</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">My Profile</a>  
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" href=" {% url 'logout' %}">Logout</a>
-          </li>
+    <div>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href=" {% url 'home' %} ">Smart-Le</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
+            </li>
+            
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'qbankview' %}" >Question Bank</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'results' %}">My Results</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">My Profile</a>  
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" href=" {% url 'logout' %}">Logout</a>
+            </li>
 
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Register</a>  
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" href=" {% url 'login' %}">Login</a>
-          </li>
-          {% endif %}
-          
-        </ul>
-      </div>  
-    </nav>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>  
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link" href=" {% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
+            
+          </ul>
+        </div>  
+      </nav>
+    </div>
     
 
    
@@ -65,5 +67,48 @@
    {% block table %} {% endblock table %}
    
     
+
+
+  
+   
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+      <div class="col-12 col-md">
+          <img class="mb-2" src="#" alt="" width="24" height="24">
+          <small class="d-block mb-3 text-muted">&copy; 2020</small>
+      </div>
+      <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+      </div>
+      <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+      </div>
+      <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+      </div>
+      </div>
+    </footer> 
+
   </body>
+
 </html>

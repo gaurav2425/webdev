@@ -9,30 +9,6 @@
 {% endblock title %}
 
 
-{% block table %}
-    <div class="container">
-      <table class="table table-hover">
-        <thead>
-          
-          <tr>
-            
-            <th scope="col">Bank</th>
-            
-            <th scope="col">Topics</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for qbank in Qbank %}
-          <tr>
-          
-            <th scope="row">{{qbank.name}}</th>
-            <td>{{qbank.description}}</td>
-            
-          </tr>
-          {% endfor %}
-          
-          
-        </tbody>
-      </table>
-    </div>
-{% endblock table %}
+{% block content %}
+  <h1> Homepage </h1>
+{% endblock content %}
