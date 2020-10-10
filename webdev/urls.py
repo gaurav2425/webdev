@@ -24,7 +24,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from Qbank import views
+from Qbank.views import QbankListView
 from users import views as user_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,7 +37,8 @@ urlpatterns = [
     url('register/', user_views.register, name='register'),
     url('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), 
     url('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
-    url('profile/', user_views.profile, name='profile'), 
+    url('profile/', user_views.profile, name='profile'),
+    url('qbank/', QbankListView.as_view(), name='qbankview') 
 ]
 
 if settings.DEBUG:

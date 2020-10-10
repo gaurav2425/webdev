@@ -27,10 +27,10 @@
           
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Question Bank</a>
+            <a class="nav-link" href="{% url 'qbankview'%}" >Question Bank</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'results'%} %">My Results</a>
+            <a class="nav-link" href="{% url 'results'%}">My Results</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'profile' %}">My Profile</a>  
