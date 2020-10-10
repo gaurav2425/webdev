@@ -5,11 +5,11 @@ from .forms import UserRegisterForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.models import User
 
 
-def register(request):
+def register(request, *args, **kwargs):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save(*args, **kwargs)
             username = form.cleaned_data.get('username')
             messages.success(request, f'Welcome to Smart-le, {username}! Login below with your username and password')
             return redirect('login')

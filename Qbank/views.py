@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import QbankModel
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -20,6 +21,6 @@ def ABIO(request):
     return render(request, 'ABIO.html')
 
 
-
+@login_required
 def results(request):
     return render(request, 'results.html')
