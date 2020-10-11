@@ -1,46 +1,14 @@
 {% extends "base.html" %}
-  {% block title %}
-    
-    {% if Qbank %}
-        <title>Homepage - Smart-Le  </title>
-    {% else %}
-        <title>Welcome to Smart-Le</title>
-    {% endif %}
 
-  {% endblock title %}
-
+{% block title %}
+  {% if Qbank %}
+      <title>Homepage - Smart-Le  </title>
+  {% else %}
+      <title>Welcome to Smart-Le</title>
+  {% endif %}
+{% endblock title %}
 
 
-
-
-  {% block table %}
-    <div class="container">
-      <ol class="breadcrumb my-4">
-        <li class="breadcrumb-item active">Question Bank Homepage - Navigator</li>
-      </ol>
-      <table class="table">
-        <thead class="thead-inverse">
-          <tr>
-            <th>Question Bank</th>
-            <th>Question Decks</th>
-            <th>Questions</th>
-            <th>Last Post</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for qbank in Qbank %}
-            <tr>
-              <td>
-                {{ qbank.name }}
-                <small class="text-muted d-block">{{ qbank.description }}</small>
-              </td>
-              <td class="align-middle">0</td>
-              <td class="align-middle">0</td>
-              <td></td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-
-  {% endblock table %}
+{% block content %}
+  <h1> Homepage </h1>
+{% endblock content %}
